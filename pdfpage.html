@@ -3,43 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF නරඹන්නා - දත්ත නිරූපණ ක්‍රම</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>සංඛ්‍යා පද්ධති පරිවර්තන - සම්පූර්ණ සටහන</title>
     <style>
-        body {
-            background-color: #f3f4f6;
+        :root {
+            --primary-color: #1F51FF; /* Electric Blue */
+            --secondary-color: #0039a6; /* තද නිල් */
+            --accent-color: #e67e22; /* පිළිතුරු සඳහා තැඹිලි */
+            --bg-color: #f0f4ff; /* ලා නිල් පසුබිම */
+            --card-bg: #ffffff;
+            --text-color: #1a1a1a;
         }
-        .pdf-viewport {
-            height: calc(100vh - 120px);
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(31, 81, 255, 0.2);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eef2ff;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        .example-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed var(--accent-color);
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .step-info {
+            background: #e0e9ff;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid var(--primary-color);
+            font-size: 0.95em;
+            color: #2c3e50;
+        }
+
+        .important {
+            color: #d63031;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #5d6d7e;
+            font-size: 0.9em;
+        }
+
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(31, 81, 255, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        sub {
+            font-size: 0.7em;
+            font-weight: normal;
         }
     </style>
 </head>
-<body class="flex flex-col items-center p-4 md:p-6">
+<body>
 
-    <div class="w-full max-w-6xl bg-white rounded-xl shadow-2xl p-4 md:p-6">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4">
-            <h1 class="text-xl md:text-2xl font-bold text-blue-800">දත්ත නිරූපණ ක්‍රම (Data Representation)</h1>
-            <a href="https://mprgc.github.io/GKNumber_System_Converter/03.%20Data%20Representation%20Methods%20in%20the%20Computer%20system%20.pdf" 
-               target="_blank" 
-               class="mt-2 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors shadow">
-                සෘජුවම බාගත කරන්න (Download)
-            </a>
-        </div>
+<div class="container">
+    <a href="index.html" class="btn">← Converter වෙත</a>
 
-        <!-- PDF එක දර්ශනය වන ප්‍රදේශය -->
-        <div class="pdf-viewport w-full border-2 border-gray-200 rounded-lg bg-gray-100 shadow-inner overflow-hidden">
-            <iframe 
-                src="https://mprgc.github.io/GKNumber_System_Converter/03.%20Data%20Representation%20Methods%20in%20the%20Computer%20system%20.pdf" 
-                class="w-full h-full" 
-                frameborder="0">
-                මෙම බ්‍රවුසරය හරහා PDF නැරඹිය නොහැක. කරුණාකර ඉහත බටනය ක්ලික් කර එය බාගත කරන්න.
-            </iframe>
+    <header>
+        <h1>සංඛ්‍යා පද්ධති පරිවර්තන</h1>
+        <p>සියලුම ආකාරයේ පරිවර්තන 12 සඳහා සම්පූර්ණ මාර්ගෝපදේශය</p>
+    </header>
+
+    <!-- 1 -->
+    <section class="card">
+        <h2>1. දශම (Decimal) → ද්විමය (Binary)</h2>
+        <p>දශම සංඛ්‍යාව 2න් බෙදා ඉතිරි වන අගයන් යට සිට ඉහළට ලියන්න.</p>
+        <div class="example-box">
+            (13)<sub>10</sub> → (?)<sub>2</sub><br>
+            13 / 2 = 6 r 1<br>
+            6 / 2 = 3 r 0<br>
+            3 / 2 = 1 r 1<br>
+            1 / 2 = 0 r 1<br>
+            පිළිතුර: (1101)<sub>2</sub>
         </div>
-        
-        <p class="mt-4 text-center text-sm text-gray-500 font-medium">
-            පිටුව මගින් සපයන ලද්දේ: GK Number System Converter Resource
-        </p>
+    </section>
+
+    <!-- 2 -->
+    <section class="card">
+        <h2>2. දශම (Decimal) → අෂ්ටක (Octal)</h2>
+        <p>දශම සංඛ්‍යාව 8න් බෙදා ඉතිරි වන අගයන් යට සිට ඉහළට ලියන්න.</p>
+        <div class="example-box">
+            (100)<sub>10</sub> → (?)<sub>8</sub><br>
+            100 / 8 = 12 r 4<br>
+            12 / 8 = 1 r 4<br>
+            1 / 8 = 0 r 1<br>
+            පිළිතුර: (144)<sub>8</sub>
+        </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="card">
+        <h2>3. දශම (Decimal) → ෂඩ්දශම (Hexadecimal)</h2>
+        <p>දශම සංඛ්‍යාව 16න් බෙදා ඉතිරි වන අගයන් ලියන්න. 10=A, 11=B, 12=C, 13=D, 14=E, 15=F භාවිතා කරන්න.</p>
+        <div class="example-box">
+            (31)<sub>10</sub> → (?)<sub>16</sub><br>
+            31 / 16 = 1 r 15 (F)<br>
+            1 / 16 = 0 r 1<br>
+            පිළිතුර: (1F)<sub>16</sub>
+        </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="card">
+        <h2>4. ද්විමය (Binary) → දශම (Decimal)</h2>
+        <p>සෑම ඉලක්කමකම පිහිටි ස්ථානය අනුව 2හි බලයන්ගෙන් (1, 2, 4, 8, 16...) ගුණ කර එකතු කරන්න.</p>
+        <div class="example-box">
+            (1011)<sub>2</sub> → (?)<sub>10</sub><br>
+            (1 × 2<sup>3</sup>) + (0 × 2<sup>2</sup>) + (1 × 2<sup>1</sup>) + (1 × 2<sup>0</sup>)<br>
+            = 8 + 0 + 2 + 1<br>
+            පිළිතුර: (11)<sub>10</sub>
+        </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="card">
+        <h2>5. ද්විමය (Binary) → අෂ්ටක (Octal)</h2>
+        <p>දකුණු පස සිට ඉලක්කම් 3 බැගින් කණ්ඩායම් කර එක් එක් කණ්ඩායමට අදාළ අෂ්ටක අගය ලියන්න.</p>
+        <div class="example-box">
+            (110101)<sub>2</sub> → (?)<sub>8</sub><br>
+            110 | 101<br>
+            6   |  5<br>
+            පිළිතුර: (65)<sub>8</sub>
+        </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="card">
+        <h2>6. ද්විමය (Binary) → ෂඩ්දශම (Hexadecimal)</h2>
+        <p>දකුණු පස සිට ඉලක්කම් 4 බැගින් කණ්ඩායම් කර එක් එක් කණ්ඩායමට අදාළ ෂඩ්දශම අගය ලියන්න.</p>
+        <div class="example-box">
+            (11111010)<sub>2</sub> → (?)<sub>16</sub><br>
+            1111 | 1010<br>
+            F(15)| A(10)<br>
+            පිළිතුර: (FA)<sub>16</sub>
+        </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="card">
+        <h2>7. අෂ්ටක (Octal) → දශම (Decimal)</h2>
+        <p>සෑම ඉලක්කමක්ම 8හි බලයන්ගෙන් (1, 8, 64...) ගුණ කර එකතු කරන්න.</p>
+        <div class="example-box">
+            (24)<sub>8</sub> → (?)<sub>10</sub><br>
+            (2 × 8<sup>1</sup>) + (4 × 8<sup>0</sup>)<br>
+            = 16 + 4<br>
+            පිළිතුර: (20)<sub>10</sub>
+        </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="card">
+        <h2>8. අෂ්ටක (Octal) → ද්විමය (Binary)</h2>
+        <p>සෑම අෂ්ටක ඉලක්කමකටම අදාළ බිටු 3ක ද්විමය අගය ලියන්න.</p>
+        <div class="example-box">
+            (52)<sub>8</sub> → (?)<sub>2</sub><br>
+            5 = 101<br>
+            2 = 010<br>
+            පිළිතුර: (101010)<sub>2</sub>
+        </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="card">
+        <h2>9. අෂ්ටක (Octal) → ෂඩ්දශම (Hexadecimal)</h2>
+        <div class="step-info">පළමුව අෂ්ටක අගය ද්විමය කර, පසුව එය බිටු 4 බැගින් කණ්ඩායම් කර ෂඩ්දශම කරන්න.</div>
+        <div class="example-box">
+            (75)<sub>8</sub> → (?)<sub>16</sub><br>
+            පියවර 1 (ද්විමය): 7=111, 5=101 → 111101<br>
+            පියවර 2 (කණ්ඩායම් 4): 0011 | 1101<br>
+            පියවර 3 (ෂඩ්දශම): 3 | D(13)<br>
+            පිළිතුර: (3D)<sub>16</sub>
+        </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="card">
+        <h2>10. ෂඩ්දශම (Hexadecimal) → දශම (Decimal)</h2>
+        <p>සෑම ඉලක්කමක්ම 16හි බලයන්ගෙන් (1, 16, 256...) ගුණ කර එකතු කරන්න.</p>
+        <div class="example-box">
+            (2B)<sub>16</sub> → (?)<sub>10</sub><br>
+            (2 × 16<sup>1</sup>) + (11 × 16<sup>0</sup>)<br>
+            = 32 + 11<br>
+            පිළිතුර: (43)<sub>10</sub>
+        </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="card">
+        <h2>11. ෂඩ්දශම (Hexadecimal) → ද්විමය (Binary)</h2>
+        <p>සෑම ෂඩ්දශම ඉලක්කමකටම අදාළ බිටු 4ක ද්විමය අගය ලියන්න.</p>
+        <div class="example-box">
+            (A3)<sub>16</sub> → (?)<sub>2</sub><br>
+            A(10) = 1010<br>
+            3 = 0011<br>
+            පිළිතුර: (10100011)<sub>2</sub>
+        </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="card">
+        <h2>12. ෂඩ්දශම (Hexadecimal) → අෂ්ටක (Octal)</h2>
+        <div class="step-info">පළමුව ෂඩ්දශම අගය ද්විමය කර, පසුව එය බිටු 3 බැගින් කණ්ඩායම් කර අෂ්ටක කරන්න.</div>
+        <div class="example-box">
+            (1E)<sub>16</sub> → (?)<sub>8</sub><br>
+            පියවර 1 (ද්විමය): 1=0001, E=1110 → 00011110<br>
+            පියවර 2 (කණ්ඩායම් 3): 000 | 011 | 110<br>
+            පියවර 3 (අෂ්ටක): 0 | 3 | 6<br>
+            පිළිතුර: (36)<sub>8</sub>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>© 2026 සංඛ්‍යා පද්ධති ඒකකය | ගයාන් සී. කරුණාතිලක</p>
     </div>
+</div>
 
 </body>
 </html>
+
