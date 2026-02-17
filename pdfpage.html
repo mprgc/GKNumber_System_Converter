@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF නරඹන්නා - දත්ත නිරූපණ ක්‍රම</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+        .pdf-viewport {
+            height: calc(100vh - 120px);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center p-4 md:p-6">
+
+    <div class="w-full max-w-6xl bg-white rounded-xl shadow-2xl p-4 md:p-6">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4">
+            <h1 class="text-xl md:text-2xl font-bold text-blue-800">දත්ත නිරූපණ ක්‍රම (Data Representation)</h1>
+            <a href="https://mprgc.github.io/GKNumber_System_Converter/03.%20Data%20Representation%20Methods%20in%20the%20Computer%20system%20.pdf" 
+               target="_blank" 
+               class="mt-2 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors shadow">
+                සෘජුවම බාගත කරන්න (Download)
+            </a>
+        </div>
+
+        <!-- PDF එක දර්ශනය වන ප්‍රදේශය -->
+        <div class="pdf-viewport w-full border-2 border-gray-200 rounded-lg bg-gray-100 shadow-inner overflow-hidden">
+            <iframe 
+                src="https://mprgc.github.io/GKNumber_System_Converter/03.%20Data%20Representation%20Methods%20in%20the%20Computer%20system%20.pdf" 
+                class="w-full h-full" 
+                frameborder="0">
+                මෙම බ්‍රවුසරය හරහා PDF නැරඹිය නොහැක. කරුණාකර ඉහත බටනය ක්ලික් කර එය බාගත කරන්න.
+            </iframe>
+        </div>
+        
+        <p class="mt-4 text-center text-sm text-gray-500 font-medium">
+            පිටුව මගින් සපයන ලද්දේ: GK Number System Converter Resource
+        </p>
+    </div>
+
+</body>
+</html>
