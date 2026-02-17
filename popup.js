@@ -2,7 +2,7 @@
 
 // ---------- Setting ----------
 
-let showPopup = true;
+let showPopup = false;
 let postImage = "https://mprgc.github.io/GKNumber_System_Converter/post1.jpg";
 let countdownTime = 3;
 
@@ -207,5 +207,6 @@ if (showPopup === true) {
 
     });
 }
+
 
 
